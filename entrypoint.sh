@@ -2,4 +2,4 @@
 
 cd /root/nut
 
-python nut.py
+python server.py
