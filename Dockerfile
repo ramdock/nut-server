@@ -8,4 +8,5 @@ COPY /entrypoint.sh /
 COPY conf /root/nut/conf
 
 EXPOSE 9000
-ENTRYPOINT ["/entrypoint.sh"]
+
+ENTRYPOINT ["sh", "/entrypoint.sh"]
