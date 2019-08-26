@@ -1,6 +1,6 @@
 FROM python:3.8.0b3-buster
 
-RUN  apt update && apt install libgl1-mesa-glx
+RUN  apt update && apt install -y libgl1-mesa-glx
 
 RUN git clone https://github.com/blawar/nut.git /root/nut --depth 1 && \
     cd /root/nut && \
