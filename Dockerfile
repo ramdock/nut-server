@@ -7,7 +7,7 @@ RUN git clone https://github.com/blawar/nut.git /root/nut --depth 1 && \
 COPY /entrypoint.sh /
 
 # add custom id and password to secure nut-server
-RUN echo ""$ID"|"$PASSWORD"" >> /conf/users.conf
+RUN echo ""$ID"|"$PASSWORD"" >> conf/users.conf
 
 COPY conf /root/nut/conf
 
