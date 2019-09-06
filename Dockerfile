@@ -1,4 +1,4 @@
-FROM python:3.6-buster
+FROM python:3.6.9-slim-buster
 
 MAINTAINER marcel@marquez.fr
 
