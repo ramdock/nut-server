@@ -11,15 +11,15 @@ RUN git clone https://github.com/blawar/nut.git /root/nut --depth 1 && \
     pip3 install colorama pyopenssl requests tqdm unidecode Pillow BeautifulSoup4 urllib3 Flask pyusb pyqt5 clock google-api-python-client
 
 COPY /entrypoint.sh /
+COPY /scraping-cron /etc/cron.d/scraping-cron
 COPY conf /root/nut/conf
 
 # add custom id and password to secure nut-server
 RUN echo -e "\n$ID|$PASSWORD" >> /root/nut/conf/users.conf
 
-RUN apt-get update && apt-get -y install cron
-
-COPY /scraping-cron /etc/cron.d/scraping-cron
-RUN chmod 0644 /etc/cron.d/scraping-cron && \
+#add cron task to crontab
+RUN apt-get update && apt-get -y install cron && \
+    chmod 0644 /etc/cron.d/scraping-cron && \
     crontab /etc/cron.d/scraping-cron
 
 EXPOSE 9000
