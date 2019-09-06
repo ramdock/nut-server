@@ -12,7 +12,7 @@ COPY /entrypoint.sh /
 COPY conf /root/nut/conf
 
 # add custom id and password to secure nut-server
-RUN echo ""$ID"|"$PASSWORD"" >> /root/nut/conf/users.conf
+RUN echo -e "\n$ID|$PASSWORD" >> /root/nut/conf/users.conf
 
 EXPOSE 9000
 
