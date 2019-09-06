@@ -1,5 +1,7 @@
 FROM python:3.6-buster
 
+MAINTAINER marcel@marquez.fr
+
 #add default values for credentials args
 ENV ID=guest
 ENV PASSWORD=guest
