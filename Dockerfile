@@ -6,7 +6,8 @@ MAINTAINER marcel@marquez.fr
 ENV ID=guest
 ENV PASSWORD=guest
 
-RUN git clone https://github.com/blawar/nut.git /root/nut --depth 1 && \
+RUN RUN apt-get update && apt-get -y install cron git && \
+    git clone https://github.com/blawar/nut.git /root/nut --depth 1 && \
     cd /root/nut && \
     pip3 install colorama pyopenssl requests tqdm unidecode Pillow BeautifulSoup4 urllib3 Flask pyusb pyqt5 clock google-api-python-client
 
@@ -18,8 +19,7 @@ COPY conf /root/nut/conf
 RUN echo -e "\n$ID|$PASSWORD" >> /root/nut/conf/users.conf
 
 #add cron task to crontab
-RUN apt-get update && apt-get -y install cron && \
-    chmod 0644 /etc/cron.d/scraping-cron && \
+RUN chmod 0644 /etc/cron.d/scraping-cron && \
     crontab /etc/cron.d/scraping-cron
 
 EXPOSE 9000
