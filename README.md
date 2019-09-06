@@ -10,14 +10,15 @@ docker run -d \
     --name=nut-server \
     -p 9000:9000 \
     -v $GAMES:/games:rw \
-    -e ID=GUEST \
-    -e PASSWORD=GUEST \
+    -e ID=$ID \
+    -e PASSWORD=$PASSWORD \
     ramdockerapp/nut-server
 ```
 
 Where:
 
 - $GAMES : Path to switch NSP and XCI library on host.
+- $GUEST : 
 
 ## BUGS
 
@@ -25,6 +26,7 @@ Where:
 ```
     wget -q --spider --user guest --password guest http://127.0.0.1:9000/api/scan 
 ```
+Don't forget to change user and password if you have changed it on container launch
 
 - You can also just call the API from a web browser. Ex on Google Chrome : http://<docker_host_ip>:9000/api/scan
 
