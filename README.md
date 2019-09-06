@@ -18,7 +18,8 @@ docker run -d \
 Where:
 
 - $GAMES : Path to switch NSP and XCI library on host.
-- $GUEST : 
+- $ID : user id to use for credentials
+- $PASSWORD : user password to use for credentials
 
 ## BUGS
 
