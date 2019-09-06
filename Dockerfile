@@ -18,7 +18,7 @@ RUN echo -e "\n$ID|$PASSWORD" >> /root/nut/conf/users.conf
 
 RUN apt-get update && apt-get -y install cron
 
-COPY scraping-cron /etc/cron.d/scraping-cron
+COPY /scraping-cron /etc/cron.d/scraping-cron
 RUN chmod 0644 /etc/cron.d/scraping-cron && \
     crontab /etc/cron.d/scraping-cron
 
