@@ -6,10 +6,10 @@ MAINTAINER marcel@marquez.fr
 ENV ID=guest
 ENV PASSWORD=guest
 
-RUN RUN apt-get update && apt-get -y install cron git && \
+RUN apt-get update && apt-get -y install cron git && \
     git clone https://github.com/blawar/nut.git /root/nut --depth 1 && \
     cd /root/nut && \
-    pip3 install colorama pyopenssl requests tqdm unidecode Pillow BeautifulSoup4 urllib3 Flask pyusb pyqt5 clock google-api-python-client
+    pip3 install colorama pyopenssl requests tqdm unidecode Pillow BeautifulSoup4 urllib3 Flask pyusb pyqt5 clock google-api-python-client google-auth-oauthlib
 
 COPY /entrypoint.sh /
 COPY /scraping-cron /etc/cron.d/scraping-cron
