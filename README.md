@@ -23,15 +23,9 @@ Where:
 
 ## BUGS
 
-- You need to call scan API after first launch of the container in order to scan your games folder. ex : 
-```
-    wget -q --spider --user guest --password guest http://127.0.0.1:9000/api/scan 
-```
-Don't forget to change user and password if you have changed it on container launch
-
-- You can also just call the API from a web browser. Ex on Google Chrome : http://<docker_host_ip>:9000/api/scan
+- cron task to scan games need one minute to be first launched (due to the fact that I launch cron task before nut server, Docker specificity here :/)
+- logs are not populated
 
 ## TODO
 
 - Add env variables for port 
-- Add scheduled scan for games library (/api/scan) 
