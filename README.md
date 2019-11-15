@@ -3,6 +3,12 @@ nut server docker image for serving switch nsp and xci to tinfoil on local netwo
 
 ## Quick Start
 
+Pull latest build from docker hub
+
+```
+docker pull ramdockerapp/nut-server
+````
+
 Launch the nut-server docker container with the following command:
 
 ``` 
