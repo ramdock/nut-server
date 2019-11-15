@@ -2,7 +2,7 @@ FROM python:3.6.9-slim-buster
 
 MAINTAINER marcel@marquez.fr
 
-ARG branch_name=v2.2C
+ARG branch_name=master
 
 RUN apt-get update && apt-get -y install cron git wget
 RUN git clone https://github.com/blawar/nut.git /root/nut --depth 1 && \
