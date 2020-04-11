@@ -15,7 +15,7 @@ COPY conf /root/nut.src.latest/conf
 
 RUN chmod +x /entrypoint.sh
 
-RUN touch /var/log/cron.log && touch /var/log/nut.log
+RUN touch /var/log/nut.log
 
 EXPOSE 9000
 
